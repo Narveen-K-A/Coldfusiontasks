@@ -1,0 +1,22 @@
+body{
+	margin: 0;
+}
+*{
+	box-sizing: border-box;
+}
+.mainBody{
+    background-color: #808080;
+    padding: 50px;
+    text-align: center;
+}
+.text{
+    padding: 10px;
+    color: #ffffff;
+    background-color: #333333;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+.text:hover{
+    background-color: #000000;
+}
