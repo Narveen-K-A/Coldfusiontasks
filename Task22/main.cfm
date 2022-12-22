@@ -4,7 +4,7 @@
     </head>
     <body>
         <cfoutput>
-            <cfinvoke method="textField" component="components/component" returnVariable="jsonDeserialized">   
+            <cfinvoke method="getJsonTable" component="components/component" returnVariable="jsonDeserialized">   
             <div class="mainBody">
                 <table>
                     <tr>

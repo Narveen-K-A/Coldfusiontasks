@@ -1,0 +1,15 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.mainBody {
+    display: flex;
+    align-items:center ;
+    justify-content: space-between;
+}
+.text {
+    padding: 10px;
+}
+.submit :hover {
+    background-color: burlywood;
+}

@@ -1,0 +1,113 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-size: small;
+    font-family: "Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+}
+.flex{
+    display: flex;
+}
+.alignBaseline{
+    align-items: baseline;
+}
+.alignCenter{
+    align-items: center;
+}
+.justifyCenter{
+    justify-content: center;
+}
+.Body {
+    display: flex;
+    align-items:center ;
+    background-color: #669900;
+    justify-content: center;
+}
+.mainBody{
+    width: 640px;
+    margin: 17px auto 10px auto;
+}
+.header{
+    background-color: #99cc00;
+}
+.smaller {
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 17px;
+}
+.small {
+    font-size: 12px;
+    color: #4a4456;
+}
+.medium{
+    font-weight: 700;
+    line-height: 19px;
+    color: #4a4456;
+}
+.mediumLarge {
+    font-size: 13px;
+    line-height: 20px;
+}
+.large{
+    font-size: 14px;
+}
+.larger{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+}
+.space{
+    padding: 5px;
+}
+.space1{
+    padding: 5px;
+}
+form{
+    padding: 20px 14px 0 18px;
+}
+ul{
+    list-style-type: none;
+}
+.employment{
+    margin: 0 0 5px 0;
+}
+.border{
+    border-bottom: 1px dotted #CCCCCC;
+    padding: 8px 0px 16px 0px;
+}
+form li{
+    width: 64%;
+    padding: 10px 10px 10px 0px;
+} 
+form li:focus-within{
+    background-color: #fff7c0;
+}
+input{
+    margin: 6px 0px;
+}
+.text {
+    padding: 10px;
+}
+.submit{
+    padding: 0px 5px;
+}
+.submit :hover {
+    background-color: burlywood;
+}
+.content {
+    background-color: #ffffff;
+}
+.image2{
+    width: 100px;
+}
+.red{
+    color: #ff0000;
+}
+#name_error, 
+#operror, 
+#date_error, 
+#url_error,
+#email_error,
+#num_error{
+    color: red;
+    visibility:hidden;      
+}

@@ -1,23 +1,24 @@
 <html>
     <head>
-        <link rel="stylesheet" href="css/style.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/task25.css">       
+        <title></title>
     </head>
     <body>
         <cfoutput>
-            <form action="components/component.cfc?method=getNumbers" method="post" name="myform">
-                <div>
-                    <input type="text" placeholder="Enter a paragraph for counting the words in it" name="field" class="field">
-                    <input type="submit" value="Submit" class="button" id="formsubmit" name="formsubmit">
-                </div>
-                <div>
-                    <i>
-                        <b>
-                            Words with length less than 3 are not counted.
-	                        Numbers are not counted and saved into the database.
-                        </b>
-                    </i>
-                </div>
-            </form>
+            <div class="main">
+                <form action="count.cfc?method=getCount" method="post" autocomplete="off" name="myform">
+                    <textarea name="text" cols="50" rows="5" id="text"></textarea>
+                    <input type="submit" name="submit" id="submit">
+                </form>
+                <cfobject  name="textObj" type="component" component="tagCloud" action="Create">
+            </div>
+            <cfif structKeyExists(session, "getWordString")>
+				<cfinclude template="task25.cfm">
+				<cfset structClear(Session)>
+			</cfif>
         </cfoutput>
     </body>
 </html>

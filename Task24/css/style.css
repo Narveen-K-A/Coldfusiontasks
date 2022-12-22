@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    box-sizing: border-box;
+}
+.bg{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+.mainbody{
+    padding: 20px;
+    display: flex;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    width: 50%;
+    background-color: #a9a9a9;
+}
+.heading{
+    margin: 20px;
+}
+.fname{
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    margin: 10px;
+}
+.width{
+    width: 175%;
+}
+.submit{
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #696969;
+}
+.submit:hover{
+    background-color: #000000;
+}
+.check{
+    cursor: pointer;
+}
