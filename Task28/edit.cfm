@@ -18,7 +18,7 @@
                     </div> 	
                 </form>
                 <cfif structKeyExists(form,'editSumbit')>
-                    <cfquery name="edit" datasource="employee">
+                    <cfquery name="edit" datasource="company">
                         UPDATE Pages
                         SET pagename=<cfqueryparam value="#form.pagename#" cfsqltype="cf_sql_varchar">, pagedescs=<cfqueryparam value="#form.description#" cfsqltype="cf_sql_varchar">
                         WHERE pageid='#url.id#'

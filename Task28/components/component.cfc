@@ -4,11 +4,11 @@
         <cfargument name="userName" default="#form.userId#">
         <cfif structKeyExists(form,'submit')>
             
-            <cfquery name="userInfo" datasource="employee">
+            <cfquery name="userInfo" datasource="company">
                 select role,username
-                from cmsLoginId
+                from loginDtl
                 where userid = <cfqueryparam value="#arguments.userName#" cfsqltype="cf_sql_varchar">
-                and passId = <cfqueryparam value="#arguments.password#" cfsqltype="cf_sql_varchar">
+                and passid = <cfqueryparam value="#arguments.password#" cfsqltype="cf_sql_varchar">
             </cfquery>
                 <cfset session.name = userInfo.username >
                 <cfset session.userRole = userInfo.role>

@@ -15,6 +15,7 @@
             <cfelse>
                 <cfreturn "Invalid!"> 
             </cfif>
+            <cfreturn #form#>
         </cfif>
     </cffunction>
 </cfcomponent>

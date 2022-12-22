@@ -2,7 +2,7 @@
     <head>
     </head>
     <body>
-         <cfquery name="textCount" datasource="employee">
+         <cfquery name="textCount" datasource="company">
             SELECT Word, numberOfTime
             FROM wordCount
             WHERE not len(Word)<3
@@ -23,7 +23,7 @@
             <a href="##" style="font-size: #size#px; text-decoration:none; color:rgb(#x#,#y#,#z#)">#textCount.Word# (#textCount.numberOfTime#)</a>
             <cfset valueText="#textCount.numberOfTime#">
         </cfoutput>
-        <cfquery name="tableTruncate" datasource="employee">
+        <cfquery name="tableTruncate" datasource="company">
         truncate table wordCount
         </cfquery>
     </body>

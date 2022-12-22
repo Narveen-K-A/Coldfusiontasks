@@ -2,8 +2,9 @@
     <body>
         <cfoutput>
             <cfif structKeyExists( session,'name')>
-                <cfquery name="show" datasource="employee">
-                    SELECT pagedescs FROM Pages
+                    <cfdump  var="#url.name#">
+                <cfquery name="show" datasource="company">
+                    SELECT pagedescs FROM pagesDtl
                     WHERE pagename='#url.name#'
                 </cfquery>
                 <div>

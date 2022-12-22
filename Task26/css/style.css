@@ -11,6 +11,6 @@
 .text {
     padding: 10px;
 }
-.submit :hover {
+.submit:hover {
     background-color: burlywood;
 }

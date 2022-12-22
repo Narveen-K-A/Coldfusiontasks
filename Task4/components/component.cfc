@@ -15,8 +15,8 @@
             The last day of the month is #lastM#<br>
         </cfoutput>
         <cfloop from="1" to="5" index="i" >
-            <cfset fiveDays=dateFormat(dateAdd("d",-i, today), "d - mmm - yyyy - dddd")>
-            <cfset day=dateFormat(dateAdd("d",-i, today), "dddd")>
+            <cfset fiveDays=dateFormat(dateAdd("d",-i,today), "d - mmm - yyyy - dddd")>
+            <cfset day=dateFormat(dateAdd("d",-i,today), "dddd")>
             <cfswitch expression = "#day#">
             <cfcase value="Monday">
                 <cfset fiveDays="<font color= Green>#fiveDays#</font>">

@@ -22,7 +22,7 @@
                     </div> 	
                 </form>
                 <cfif structKeyExists(form,'addSumbit')>
-                    <cfquery name="edit" datasource="employee">
+                    <cfquery name="edit" datasource="company">
                         insert into Pages values(
                          <cfqueryparam value="#form.pageid#" cfsqltype="cf_sql_varchar">,
                          <cfqueryparam value="#form.pagename#" cfsqltype="cf_sql_varchar">,

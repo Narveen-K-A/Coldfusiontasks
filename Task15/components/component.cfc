@@ -1,14 +1,14 @@
 <cfcomponent>
     <cffunction name="getOutput" access="remote">
         <cfset multiplyValues = createObject("component","components/component")>
-        <cfset local.res = mulitiply(1,2)>
+        <cfset local.res = multiply(1,2)>
         <cfdump var="#local.res#"><br>
-        <cfset local.res = mulitiply(1,2,3)>
+        <cfset local.res = multiply(1,2,3)>
         <cfdump var="#local.res#"><br>
-        <cfset local.res = mulitiply(1,2,3,4)>
+        <cfset local.res = multiply(1,2,3,4)>
         <cfdump var="#local.res#"><br>
     </cffunction>
-    <cffunction name="mulitiply">
+    <cffunction name="multiply">
         <cfargument name="w" required="yes">
         <cfargument name="x" required="yes">
         <cfargument name="y" required="yes" default="1">

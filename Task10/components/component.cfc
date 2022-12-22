@@ -1,12 +1,14 @@
 <cfcomponent>
-    <cfset session.myStruct=StructNew()>
     <cffunction name="structure" access="remote">
         <cfargument name="formKey" type="string" default="#form.key#">
         <cfargument name="formValue" type="string" default="#form.value#">
-        <cfapplication name="GetStruct" sessionmanagement="Yes" sessiontimeout=#CreateTimeSpan(0,0,45,0)#>
-        <cflock timeout="45" scope="Session" type="Readonly">
+        <cfif structKeyExists(session,'myStruct')>
             <cfset session.myStruct[arguments.formKey]=arguments.formValue>
-            <cfdump var="#session.myStruct#">
-        </cflock>
+            <cfset structAppend(session.myStruct, session.myStruct)>
+        <cfelse>
+            <cfset session.myStruct=structNew()>
+            <cfset session.myStruct[arguments.formKey]=arguments.formValue>
+        </cfif>
+        <cfdump var="#session.myStruct#">
     </cffunction>
 </cfcomponent>

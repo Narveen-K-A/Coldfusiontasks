@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link rel="stylesheet" href="css/css.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
         <cfoutput>
@@ -12,7 +12,7 @@
                     <input type="submit" name="submit" class="text">
                 </form>
                 <cfif structKeyExists( form,'submit')>
-                    <cfinvoke method="textField" component="components/components">
+                    <cfinvoke method="textField" component="components/component">
                     <cfset structClear(form)>
                 </cfif>
             </div>

@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link rel="stylesheet" href="css/css.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
         <cfoutput>
@@ -10,7 +10,7 @@
                         <h1>Welcome #session.userRole# </h1> <br>
                     </div>
                     <a href="login.cfm" class="logout">LOGOUT</a>
-                    <cfquery name="pageList" datasource="employee">
+                    <cfquery name="pageList" datasource="company">
                             select pagename,pagedescs,pageid from pages
                     </cfquery>
                 </div>
@@ -20,7 +20,7 @@
                 </div>
                 <table>
                     <cfloop query="pageList">
-                        <cfquery name="descList" datasource="employee">
+                        <cfquery name="descList" datasource="company">
                             SELECT pagedescs,pageid FROM pages
                             WHERE pageid = '#pageList.pageid#'
                         </cfquery>
