@@ -1,11 +1,11 @@
 <cfcomponent>
-    <cffunction name="Field"  access="remote">
+    <cffunction name="field" access="remote">
         <cfset local.res = mulitiply(1,2)>
-        <cfdump var=#local.res#><br>
+        <cfreturn local.res><br>
         <cfset res = mulitiply(1,2,3)>
-        <cfdump var=#local.res#><br>
+        <cfreturn local.res><br>
         <cfset res = mulitiply(1,2,3,4)>
-        <cfdump  var=#local.res#><br>
+        <cfreturn local.res><br>
     </cffunction>
     <cffunction name="mulitiply">
         <cfargument name="a" required="yes">

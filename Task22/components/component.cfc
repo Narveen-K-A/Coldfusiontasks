@@ -1,10 +1,8 @@
 <cfcomponent>
     <cffunction name="getJsonTable" access="remote">
-        <cfset jsonDeserialized = []>
-        <cfscript>
-            jsonTable=serializeJSON([{"Name":"Saravanan","Age":27,"LOCATION":"Dubai"},{"Name":"Ram","Age":26,"LOCATION":"Kovilpatti"}]);
-            jsonDeserialized=deserializeJSON(jsonTable);
-        </cfscript> 
-        <cfreturn jsonDeserialized>
+        <cfset jsonDeserialize = []>
+        <cfset jsonTable=serializeJSON([{"Name":"Saravanan","Age":27,"Location":"Dubai"},{"Name":"Ram","Age":26,"Location":"Kovilpatti"}])>
+        <cfset jsonDeserialize=deserializeJSON(jsonTable)>
+        <cfreturn jsonDeserialize>
     </cffunction>
 </cfcomponent>

@@ -5,7 +5,7 @@
     <body>
         <cfoutput>
             <cfinvoke method="makeRandomString" component="components/component" returnVariable="captch">
-            <form action="components/component.cfc?method=getCaptcha" method="post" name="myform">
+            <form action="main.cfm" method="post" name="myform">
                 <div>
                     <label>Enter your mail ID:</label><br>
                     <input type="mail" name="mail" class="field" required>
@@ -16,10 +16,14 @@
                     <input type="text" name="captcha" class="field2" required>
                     <input type="hidden" name="captchatext" value="#captch#">
                     <div>
-                        <input type="submit" value="Submit" class="button" id="submit" name="submit">
+                        <input type="submit" value="Submit" class="button" id="formsubmit" name="formsubmit">
                     </div>
                 </div>
             </form>
+            <cfif structKeyExists(form,'formsubmit')>
+                <cfinvoke method="getCaptcha" component="components/component" returnVariable="message">
+                #message#
+            </cfif>
         </cfoutput>
     </body>
 </html>

@@ -1,13 +1,6 @@
 <cfcomponent>
     <cffunction  name="getSQL" access="remote">
-         <cfscript>
-            queryData= queryNew("ID, Name, Email","Integer,Varchar,Varchar",
-            [
-                {ID=1, Name="Ashna F Raj", email="ashnafrajan@gmail.com"},
-                {ID=2, Name="Ram Prakash", email="ramprakash@gmail.com"},
-                {ID=3, Name="Narveen K A", email="narveenka@gmail.com"}
-            ]);
-            writeDump(queryData)
-         </cfscript>
+        <cfset queryField=queryNew("ID, Name, Email","Integer,Varchar,Varchar", [{ID=101, Name="Narveen K A", email="narveenanwar2@gmail.com"}, {ID=102, Name="Ram Prakash J D", email="ramprakash@gmail.com"}, {ID=103, Name="Ashna F Raj", email="ashnafrajan@gmail.com"}])>
+        <cfreturn queryField>
     </cffunction>
 </cfcomponent>

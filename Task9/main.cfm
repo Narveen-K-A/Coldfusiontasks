@@ -9,14 +9,18 @@
                     <input type="text" placeholder="Enter the key for the structure" name="key" class="field">
                     <input type="text" placeholder="Enter the value for the structure" name="value" class="field">
                     <div>
-                        <input type="submit" value="Submit" class="button" id="submit" name="submit">
+                        <input type="submit" value="Submit" class="button" id="formsubmit" name="formsubmit">
                     </div>
                 </div>
-                <cfif structKeyExists(form,'submit')>
-                    <cfinvoke method="structure" component="components/component">
+                <cfif structKeyExists(form,'formsubmit')>
+                    <cfinvoke method="getStruct" component="components/component" returnVariable="result">
+                    <cfset structClear(form)>
+                    <cfdump var="#session.task#"><br>
+                    <cfif result.count==1>
+                        The key #result.value# is already present. Cannot add again!
+                    </cfif>
                 </cfif>
-            </form>
-            The key #form.field# is already present in the structure.    
+            </form>    
         </cfoutput>
     </body>
 </html>

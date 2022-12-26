@@ -1,10 +1,9 @@
 <cfcomponent>
     <cffunction name="visitcount" access="remote">
-        
- 	        <cfif structKeyExists(Cookie,'visitsCounter') eq false>
-                <cfcookie name="visitsCounter" value=1>
-            </cfif>
-            <cfset Cookie.visitsCounter = Cookie.visitsCounter+1>
-            <cfreturn Cookie.visitsCounter>
+        <cfif structKeyExists(Cookie,'visitCounter') eq false>
+            <cfcookie name="visitCounter" value=1>
+        </cfif>
+        <cfset Cookie.visitCounter = Cookie.visitCounter+1>
+        <cfreturn Cookie.visitCounter>
     </cffunction>
 </cfcomponent>

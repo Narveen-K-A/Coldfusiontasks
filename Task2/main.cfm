@@ -11,7 +11,8 @@
                 </div>
             </form> 
             <cfif structKeyExists(form,'formsubmit')>
-                <cfinvoke method="getNumbers" component="components/component">   
+                <cfinvoke method="getNumbers" component="components/component" returnVariable="result">
+                #result#  
                 <cfset structClear(form)>
             </cfif>
         </cfoutput>

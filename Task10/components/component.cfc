@@ -1,5 +1,5 @@
 <cfcomponent>
-    <cffunction name="structure" access="remote">
+    <cffunction name="structure" access="remote" returnType="struct">
         <cfargument name="formKey" type="string" default="#form.key#">
         <cfargument name="formValue" type="string" default="#form.value#">
         <cfif structKeyExists(session,'myStruct')>
@@ -9,6 +9,6 @@
             <cfset session.myStruct=structNew()>
             <cfset session.myStruct[arguments.formKey]=arguments.formValue>
         </cfif>
-        <cfdump var="#session.myStruct#">
+        <cfreturn session.myStruct>
     </cffunction>
 </cfcomponent>

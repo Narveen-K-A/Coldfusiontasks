@@ -1,7 +1,8 @@
 <html>
     <body>
         <cfoutput>
-            <cfinvoke method="Field" component="components/component">    
+            <cfinvoke method="field" component="components/component" returnVariable="result">
+            #result#   
         </cfoutput>
     </body>
 </html>

@@ -12,7 +12,7 @@
             </form>
             <cfif structKeyExists(form,'submit')>
                 <cfinvoke method="getNumbers" component="components/component" returnVariable="result">
-                <cfdump  var="#result#">
+                <cfdump var="#result#">
             </cfif>  
         </cfoutput>
     </body>

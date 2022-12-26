@@ -10,7 +10,11 @@
                     <input type="submit" value="Submit" class="button" id="formsubmit" name="formsubmit">
                 </div>
             </form>
-            <cfdump var="#form#">
+            <cfif structKeyExists(form,'formsubmit')>
+                <cfinvoke method="getNumbers" component="components/component" returnVariable="result">
+                #result# 
+                <cfset structClear(form)>
+            </cfif>
         </cfoutput>
     </body>
 </html>

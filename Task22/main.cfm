@@ -4,23 +4,21 @@
     </head>
     <body>
         <cfoutput>
-            <cfinvoke method="getJsonTable" component="components/component" returnVariable="jsonDeserialized">   
-            <div class="mainBody">
-                <table>
+            <cfinvoke method="getJsonTable" component="components/component" returnVariable="result">   
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Location</th>
+                </tr>
+                <cfloop array="#result#" index="i">
                     <tr>
-                        <th>Name</th>
-                        <th>Age</th>
-                        <th>Location</th>
+                        <td>#i["Name"]#</td>
+                        <td>#i["Age"]#</td>
+                        <td>#i["Location"]#</td>
                     </tr>
-                    <cfloop array="#jsonDeserialized#" index="i">
-                        <tr>
-                            <td>#i["Name"]#</td>
-                            <td>#i["Age"]#</td>
-                            <td>#i["LOCATION"]#</td>
-                        </tr>
-                    </cfloop>
-                </table>
-            </div>    
+                </cfloop>
+            </table>    
         </cfoutput>
     </body>
 </html>
