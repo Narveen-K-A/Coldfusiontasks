@@ -18,12 +18,12 @@
                         <textarea name="description" rows="5"></textarea>
                     </div>
                     <div>
-                        <input type="submit" name="addSumbit" id="edtsubmitid" value="edit">
+                        <input type="submit" name="addSubmit" id="editSubmit" value="Edit">
                     </div> 	
                 </form>
-                <cfif structKeyExists(form,'addSumbit')>
+                <cfif structKeyExists(form,'addSubmit')>
                     <cfquery name="edit" datasource="company">
-                        insert into Pages values(
+                        insert into pagesDtl values(
                          <cfqueryparam value="#form.pageid#" cfsqltype="cf_sql_varchar">,
                          <cfqueryparam value="#form.pagename#" cfsqltype="cf_sql_varchar">,
                          <cfqueryparam value="#form.description#" cfsqltype="cf_sql_varchar">)

@@ -14,8 +14,8 @@
                 </div>
             </form>
             <cfif structKeyExists(form,'formsubmit')>
-                <cfinvoke method="structure" component="components/component" returnVariable="result">
-                <cfdump var="#result#">
+                <cfinvoke method="structure" component="components/component" >
+                <cfdump var="#session.myStruct#">
             </cfif>     
         </cfoutput>
     </body>

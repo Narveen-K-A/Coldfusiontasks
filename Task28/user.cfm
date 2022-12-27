@@ -11,7 +11,7 @@
                     </div>
                     <a href="login.cfm" class="logout">LOGOUT</a>
                     <cfquery name="pageList" datasource="company">
-                        select pagename,pagedescs from pagesDtl
+                        SELECT pagename,pagedescs FROM pagesDtl
                     </cfquery>
                 </div>
                 <div>
@@ -19,7 +19,7 @@
                 </div>
                 <cfloop query="pageList">
                     <div>
-                        <a href="showPage.cfm?name=#pageList.pagename#"><cfoutput>#pageList.pagename#</cfoutput></a>
+                        <a href="showPage.cfm?name=#pageList.pagename#">#pageList.pagename#</a>
                     </div>							
                 </cfloop>
             <cfelse>

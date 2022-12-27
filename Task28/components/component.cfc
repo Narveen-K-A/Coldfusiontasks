@@ -3,7 +3,6 @@
         <cfargument name="password" default="#form.password#">
         <cfargument name="userName" default="#form.userId#">
         <cfif structKeyExists(form,'submit')>
-            
             <cfquery name="userInfo" datasource="company">
                 select role,username
                 from loginDtl

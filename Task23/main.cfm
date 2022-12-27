@@ -11,7 +11,7 @@
 						<img src="assets/wflogo.png" alt="logo">
 					</div>
 					<div class="content">
-						<form  method="post"  name="form" onsubmit="return validateform()">
+						<form  method="post" name="form" onsubmit="return validateform()">
 							<p class="larger employment">Employment Application</p>
 							<p class="small border">Infinity Box Inc</p>
 							<ul>
@@ -123,7 +123,7 @@
 									</div>
 								</li>
 								<div class="submit">
-									<input type="submit" id="submit" value="Submit" name="submit">
+									<input type="submit" id="formsubmit" value="Submit" name="formsubmit">
 								</div>
 						</form>
 						<cfinvoke method="textField" component="components/component">

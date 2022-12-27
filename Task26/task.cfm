@@ -8,7 +8,7 @@
             WHERE not len(Word)<3
             ORDER BY numberOfTime DESC,len(Word) DESC, Word ASC;
         </cfquery>
-        <cfset colstr = {1:'green',2:'blue',3:'yellow',4:'red',5:'violet'}>
+        <cfset colstr = {1:'red',2:'green',3:'blue',4:'yellow',5:'violet'}>
         <cfset valueText="#textCount.numberOfTime#">
         <cfset x=randRange(0, 255)>
         <cfset y=randRange(0, 255)>
@@ -23,8 +23,5 @@
             <a href="##" style="font-size: #size#px; text-decoration:none; color:rgb(#x#,#y#,#z#)">#textCount.Word# (#textCount.numberOfTime#)</a>
             <cfset valueText="#textCount.numberOfTime#">
         </cfoutput>
-        <cfquery name="tableTruncate" datasource="company">
-        truncate table wordCount
-        </cfquery>
     </body>
 </html>

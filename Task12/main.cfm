@@ -12,9 +12,9 @@
             </form>
             <cfif structKeyExists(form, "formsubmit")>
                 <cfinvoke method="sqlQuery" component="components/component" returnVariable="result">
-                <cfloop query="comp" startRow="#form.field#" endRow="#form.field#">
-                    The number #form.field# name is #FirstName#<br>
-                </cfloop>
+                The no #form.field# name is #result#<br>
+                <cfinclude template="task.cfm">
+                <cfset StructClear(form)>
             </cfif>  
         </cfoutput>
     </body>

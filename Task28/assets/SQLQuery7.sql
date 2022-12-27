@@ -4,7 +4,7 @@ CREATE TABLE loginDtl(username varchar(30), userid varchar(20), Passid varchar(2
 
 SELECT * FROM loginDtl;
 
-INSERT INTO loginDtl VALUES('Narveen','narveen2000','Narveen@2000','user'),
+INSERT INTO loginDtl VALUES('Narveen','Narveen2000','Narveen@2000','user'),
 							('Ashna','Ashna1999','Ashna@1999','admin');
 
 CREATE TABLE pagesDtl(pageid varchar(20), pagename varchar(20), pagedescs varchar(500));

@@ -16,8 +16,8 @@
                     <cfinvoke method="getStruct" component="components/component" returnVariable="result">
                     <cfset structClear(form)>
                     <cfdump var="#session.task#"><br>
-                    <cfif result.count==1>
-                        The key #result.value# is already present. Cannot add again!
+                    <cfif structKeyExists(session,'count')>
+                        The key #session.value# is already present. Cannot add again!
                     </cfif>
                 </cfif>
             </form>    

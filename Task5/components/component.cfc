@@ -1,44 +1,39 @@
 <cfcomponent>
     <cffunction name="getAge" access="remote">
-        <cfif structKeyExists(form, 'submit')>
-        <cfset yourBirthday = form.user>
-        <cfset momBirthday = form.mother>
-            <cfif #yourBirthday# lt #momBirthday# >
-                <cfoutput>
-                    Child's age should always less than mother's age!
-                </cfoutput>
-            <cfelse>
-                <cfset nowdate = dateFormat("#now()#","yyyy")>
-                <cfset yourdate = dateFormat("#yourBirthday#","yyyy")>
-                <cfset momdate = dateFormat("#momBirthday#","yyyy")>
-                <cfset yourAge = #nowdate#-#yourdate#>
-                <cfset momDeliveredAge= #yourdate#-#momdate#>
-                <cfset y= dateFormat("#now()#", "yyyy")>
-                <cfset y2 =dateFormat("#now()#", "yyyy")>
-                <cfset m = dateFormat("#yourBirthday#", "mm")>
-                <cfset nm = dateFormat("#now()#", "mm")>
-                <cfset d = dateFormat("#yourBirthday#", "dd")>
-                <cfset nd = dateFormat("#now()#", "dd")>
-                <cfif #m# eq #nm# && #nd# lte #d# || #m# gt #nm#>
-                    <cfelse>
-                        <cfset y = #y# + 1>
-                </cfif>
-                <cfset day = createDate("#y#", "#m#" , "#d#")>
-                <cfset nextDay=dateDiff("d", now(), day)>
-                <cfset m2 = dateFormat("#momBirthday#", "mm")>
-                <cfset d2 = dateFormat("#momBirthday#", "dd")>
-                <cfif #m2# eq #nm# && #nd# lte #d2# || #m2# gt #nm#>
-                    <cfelse>
-                        <cfset y2 = #y2# + 1>
-                </cfif>
-                <cfset day2 = createDate("#y2#", "#m2#" , "#d2#")>
-                <cfset nextDay2=dateDiff("d", now(), day2)>
-                <cfoutput>
-                    Users age = #yourAge# <br>
-                    At age #momDeliveredAge# his mother delivered him.<br>
-                    #nextDay# days are remaining for his and #nextDay2# days are remaining his mother birthday.
-                </cfoutput>
-            </cfif>
-       </cfif>
+        <cfargument name="yourBirthday" type="any" default="#form.user#">
+        <cfargument name="momBirthday" type="any" default="#form.mother#">
+        <cfset local.nowdate=dateFormat("#now()#","yyyy")>
+        <cfset local.yourdate=dateFormat(arguments.yourBirthday,"yyyy")>
+        <cfset local.momdate=dateFormat(arguments.momBirthday,"yyyy")>
+        <cfset local.yourAge=local.nowdate-local.yourdate>
+        <cfset local.momDeliveredAge= local.yourdate-local.momdate>
+        <cfset local.year=dateFormat(now(), "yyyy")>
+        <cfset local.year2=dateFormat(now(), "yyyy")>
+        <cfset local.m=dateFormat(arguments.yourBirthday, "mm")>
+        <cfset local.nm=dateFormat(now(), "mm")>
+        <cfset local.d=dateFormat(arguments.yourBirthday, "dd")>
+        <cfset local.nd=dateFormat(now(), "dd")>
+        <cfif local.m eq local.nm && local.nd lte local.d || local.m gt local.nm>
+            <cfset local.year=local.year>
+        <cfelse>
+            <cfset local.year=local.year+1>
+        </cfif>
+        <cfset local.day=createDate(local.year, local.m , local.d)>
+        <cfset local.nextDay=dateDiff("d", now(), local.day)>
+        <cfset local.m2=dateFormat(arguments.momBirthday, "mm")>
+        <cfset local.d2=dateFormat(arguments.momBirthday, "dd")>
+        <cfif local.m2 eq local.nm && local.nd lte local.d2 || local.m2 gt local.nM>
+            <cfset local.year2=local.year2>
+        <cfelse>
+            <cfset local.year2=local.year2 + 1>
+        </cfif>
+        <cfset local.day2=createDate(local.year2, local.m2 , local.d2)>
+        <cfset local.nextDay2=dateDiff("d", now(), local.day2)>
+        <cfset local.dateStruct=structNew()>
+        <cfset local.dateStruct.yourAge = local.yourAge>
+        <cfset local.dateStruct.momDeliveredAge = local.momDeliveredAge>
+        <cfset local.dateStruct.nextDay = local.nextDay>
+        <cfset local.dateStruct.nextDay2 = local.nextDay2>
+        <cfreturn local.dateStruct>
     </cffunction>
 </cfcomponent>

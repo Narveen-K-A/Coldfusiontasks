@@ -1,11 +1,10 @@
 <cfcomponent>
     <cffunction name="field" access="remote">
-        <cfset local.res = mulitiply(1,2)>
-        <cfreturn local.res><br>
-        <cfset res = mulitiply(1,2,3)>
-        <cfreturn local.res><br>
-        <cfset res = mulitiply(1,2,3,4)>
-        <cfreturn local.res><br>
+        <cfset local.mystruct=structNew()>
+        <cfset local.mystruct.multiply1=mulitiply(1,2)>
+        <cfset local.mystruct.multiply2=mulitiply(1,2,3)>
+        <cfset local.mystruct.multiply3=mulitiply(1,2,3,4)>
+        <cfreturn local.mystruct><br>
     </cffunction>
     <cffunction name="mulitiply">
         <cfargument name="a" required="yes">

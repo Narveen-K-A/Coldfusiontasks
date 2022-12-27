@@ -1,9 +1,14 @@
 <html>
     <body>
         <cfoutput>
-            <form action="main.cfm" method="post" name="form">
-                <cfinvoke method="pattern" component="components/component">    
-            </form>
+            <div class="mainBody">
+                <cfinvoke  method="textField" component = "components/component" returnVariable="number">
+                <cfloop from="1" to="3" index="i">
+                    <cfloop from="1" to="3" index="j">
+                        <cfoutput>#number[i][j]#</cfoutput>
+                    </cfloop><br>
+                </cfloop>    
+            </div>
         </cfoutput>
     </body>
 </html>

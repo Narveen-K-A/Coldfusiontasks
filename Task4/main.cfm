@@ -5,7 +5,15 @@
     <boby>
         <cfoutput>
             <div class="mainBody">
-                <cfinvoke  method="textField" component="components/component">
+                <cfinvoke method="textField" component="components/component" returnVariable="myStruct"> 
+                Today is #myStruct.today# <br>
+                This month is #myStruct.month# (#myStruct.monthWords#)<br>
+                The last friday is #myStruct.friday#<br>
+                The last day of the month is #myStruct.lastM#<br>
+                The last 5 days of the month is:<br>
+                <cfloop from="1" to="5" index="i" >
+                    #myStruct[i]#<br>
+                </cfloop>
             </div>
         </cfoutput>
     <body>

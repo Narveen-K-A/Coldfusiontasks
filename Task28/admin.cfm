@@ -4,37 +4,36 @@
     </head>
     <body>
         <cfoutput>
-            <cfif structKeyExists( session,'adminFlag')>
+            <cfif structKeyExists(session,'adminFlag')>
                 <div class="mainBody">
                     <div>
                         <h1>Welcome #session.userRole# </h1> <br>
                     </div>
                     <a href="login.cfm" class="logout">LOGOUT</a>
                     <cfquery name="pageList" datasource="company">
-                            select pagename,pagedescs,pageid from pages
+                        select pagename,pagedescs,pageid from pagesDtl
                     </cfquery>
                 </div>
-                <h2>hai #session.name#<h2>
+                <h2>Hi #session.name#<h2>
                 <div>
                     <h3>Page List</h3>
                 </div>
                 <table>
                     <cfloop query="pageList">
-                        <cfquery name="descList" datasource="company">
-                            SELECT pagedescs,pageid FROM pages
-                            WHERE pageid = '#pageList.pageid#'
-                        </cfquery>
+                        <cfset args = StructNew()> 
+                        <cfset args.pageList="#pageList.pageid#">
+                        <cfinvoke component="componentfile" method="getQuery" returnVariable="result" argumentCollection="#args#">
                         <tr>
-                            <td><cfoutput>#pageList.pagename#</cfoutput></td>
-                            <td><a href="edit.cfm?name=#pageList.pagename#&id=#descList.pageid#&desc=#descList.pagedescs#">EDIT</a></td>
-                            <td><a href="delete.cfc?method=deletepage&id=#descList.pageid#">DELETE</a></td></td>
+                            <td>#pageList.pagename#</td>
+                            <td><a href="edit.cfm?name=#pageList.pagename#&id=#pageList.pageid#&desc=#result.pagedescs#">EDIT</a></td>
+                            <td><a href="delete.cfc?method=deletepage&id=#pageList.pageid#">DELETE</a></td></td>
                         </tr>
                     </cfloop>
                 </table>
                 <a href="addpage.cfm"?>ADD A NEW PAGE</a>
             <cfelse>
                 <cflocation url="login.cfm" addtoken="No">
-                <cfset  StructClear(Session)>
+                <cfset StructClear(Session)>
             </cfif>
         </cfoutput>
     </body>

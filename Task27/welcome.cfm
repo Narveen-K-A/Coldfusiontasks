@@ -8,10 +8,10 @@
                     <cfif structKeyExists( session,'flag')>
                         <div>
                             <h1>WELCOME </h1> <br>
-                            <h2>Hai #session.name#<h2>
+                            <h2>Hi #session.name#<h2>
                         </div>
                         <form method="post" name="form">
-                            <input type="submit" value="logout" name="logout" class="button">
+                            <input type="submit" value="Logout" name="logout" class="button">
                         </form>
                         <cfif structKeyExists( form,'logout')>
                             <cfinvoke method="logoutField" component="components/task27">
