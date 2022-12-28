@@ -1,12 +1,12 @@
 
 <cfcomponent>
-    <cffunction name="emailValidate"  access="remote" returnformat="plain">
+    <cffunction name="emailValidate" access="remote" returnformat="plain">
         <cfargument name="Email" type="any" required="yes">
         <cfargument name="Name" type="any" required="yes">
         <cfquery name="validate" datasource="company">
-            select count(Emailid) records
-            from email
-            where Emailid=<cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.Email#">
+            SELECT count(Emailid) records
+            FROM email
+            WHERE Emailid=<cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.Email#">
         </cfquery>
         <cfif validate.records eq 0>
             <cfquery name="Emailid" datasource="company"> 

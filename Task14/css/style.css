@@ -1,0 +1,36 @@
+body{
+	margin: 0;
+}
+.mainBody{
+    background-color: #f0b4e8;
+	padding: 30px 40px;
+	text-align: center;
+}
+.field{
+    padding: 10px;
+    width: 25%;
+    border: none;
+    outline: none;
+}
+.button{
+    padding: 10px;
+    color: #ffffff;
+    background-color: #e359d0;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+.button:hover{
+    background-color: #ed09cf;
+}
+.margin{
+    margin: 10px;
+}
+textarea{
+    border: none;
+    outline: none;
+}
+.align{
+    text-align: center;
+    margin: 10px;
+}

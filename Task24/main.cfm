@@ -25,7 +25,7 @@
                         <input type="checkbox" name="check" class="fname check" onclick="checktest()">
                         <label for="check">Click the checkbox for enabling the submit button!</label>
                     </div>
-                    <input type="submit" value="Submit" class="fname submit">
+                    <input type="submit" value="Submit" class="fname submit" disabled>
                 </form>
             </div>
         </div>

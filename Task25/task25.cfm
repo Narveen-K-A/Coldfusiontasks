@@ -1,31 +1,22 @@
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/task25.css">       
-        <title></title>
+        <link rel="stylesheet" href="css/task25.css">
     </head>
     <body>
-        <cfquery name="textCount" datasource="company">
-            SELECT Word, Wordcount
-            FROM Textinput
-            WHERE not len(Word)<3
-            ORDER BY Wordcount DESC,len(Word) DESC, Word ASC
-        </cfquery>
-        <cfset valueText="#textCount.Wordcount#">
+        <cfinvoke component="tagCloud" method="getTextCount" returnVariable="result">
+        <cfset valueText="#result.Wordcount#">
         <cfset x=randRange(0, 255)>
         <cfset y=randRange(0, 255)>
         <cfset z=randRange(0, 255)>
-        <cfoutput query="textCount">
-            <cfset size="#textCount.Wordcount#"+14>
-            <cfif valueText neq textCount.Wordcount>
+        <cfoutput query="result">
+            <cfset size="#result.Wordcount#"+14>
+            <cfif valueText neq result.Wordcount>
    				<cfset x=randRange(0,255)>
   			    <cfset y=randRange(0,255)>
   				<cfset z=randRange(0,255)>
    			</cfif>
-            <a href="##" style="font-size: #size#px; text-decoration:none; color:rgb(#x#,#y#,#z#)">#textCount.Word# (#textCount.Wordcount#)</a>
-            <cfset valueText="#textCount.Wordcount#">
+            <a href="##" style="font-size: #size#px; text-decoration:none; color:rgb(#x#,#y#,#z#)">#result.Word# (#result.Wordcount#)</a>
+            <cfset valueText="#result.Wordcount#">
         </cfoutput>
     </body>
 </html>

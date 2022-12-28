@@ -1,0 +1,11 @@
+body{
+	margin: 0;
+}
+*{
+	box-sizing: border-box;
+}
+div{
+    background-color: #cc97cf;
+	padding: 40px 50px;
+	text-align: center;
+}

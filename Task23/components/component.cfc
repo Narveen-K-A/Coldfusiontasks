@@ -7,7 +7,7 @@
         <cfargument name="fieldtel" type="any" default="#form.tel#">
         <cfargument name="fielddate" type="any" default="#form.date#">
         <cfargument name="fieldurl" type="any" default="#form.url#">
-        <cfif structKeyExists(form, "submit")>
+        <cfif structKeyExists(form,'formsubmit')>
             <cfquery name="wufooForm" datasource="company">
                 insert into works values(<cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.fieldOption#">,
                                         <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.fieldfname#">,

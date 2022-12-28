@@ -5,12 +5,16 @@
     </head>
     <body>
         <cfoutput>
-            <div class="main">
-                <form action="count.cfc?method=getCount" method="post" autocomplete="off" name="myform">
-                    <textarea name="text" cols="50" rows="5" id="text"></textarea>
-                    <input type="submit" name="submit" id="submit">
-                </form>
-                <cfobject  name="textObj" type="component" component="tagCloud" action="Create">
+            <div class="mainBody">
+                <div>
+                    <form action="count.cfc?method=getCount" method="post" autocomplete="off" name="myform">
+                        <textarea name="text" cols="50" rows="5" id="text"></textarea>
+                        <div>
+                            <input type="submit" name="submit" id="submit" value="Submit" class="button">
+                        </div>
+                    </form>
+                    <cfobject  name="textObj" type="component" component="tagCloud" action="Create">
+                </div>
             </div>
             <cfif structKeyExists(session, "getWordString")>
 				<cfinclude template="task25.cfm">

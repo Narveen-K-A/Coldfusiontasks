@@ -4,21 +4,21 @@
 	    <cfset local.length = 6>
 	    <cfset local.result = "">
 	    <cfloop index="i" from="1" to="#length#">
-		    <cfset char=mid(chars, randRange(1, len(chars)),1)>
-		    <cfset result&=char>
+		    <cfset local.char=mid(chars, randRange(1, len(chars)),1)>
+		    <cfset local.result&=local.char>
 	    </cfloop>	
-	    <cfreturn result>
+	    <cfreturn local.result>
     </cffunction>
     <cffunction name="getCaptcha" access="remote">
         <cfargument name="formCaptcha" type="string" default="#form.captcha#">
         <cfargument name="formCaptchatext" type="string" default="#form.captchatext#">
         <cfset local.captch = makeRandomString()>
         <cfif arguments.formCaptchatext eq arguments.formCaptcha>
-            <cfset message="Email Address successfully subscribe our newsletter!">
-            <cfreturn message>
+            <cfset local.message="Email Address successfully subscribe our newsletter!">
+            <cfreturn local.message>
         <cfelse>
-            <cfset message="Invalid captcha!">
-            <cfreturn message>
+            <cfset local.message="Invalid captcha!">
+            <cfreturn local.message>
         </cfif>
     </cffunction>
 </cfcomponent>

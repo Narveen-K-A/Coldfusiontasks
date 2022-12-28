@@ -126,7 +126,9 @@
 									<input type="submit" id="formsubmit" value="Submit" name="formsubmit">
 								</div>
 						</form>
-						<cfinvoke method="textField" component="components/component">
+						<cfif structKeyExists(form, "formsubmit")>
+							<cfinvoke method="textField" component="components/component">
+						</cfif>
 					</div>
 					<div class="footer flex alignCenter justifyCenter">
 						<span class="smaller">Powered By</span>

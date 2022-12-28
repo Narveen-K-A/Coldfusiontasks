@@ -16,11 +16,7 @@
                     </div> 	
                 </form>
                 <cfif structKeyExists(form,'editSubmit')>
-                    <cfquery name="edit" datasource="company">
-                        UPDATE pagesDtl
-                        SET pagename=<cfqueryparam value="#form.pagename#" cfsqltype="cf_sql_varchar">, pagedescs=<cfqueryparam value="#form.description#" cfsqltype="cf_sql_varchar">
-                        WHERE pageid='#url.id#'
-                    </cfquery>
+                    <cfinvoke component="componentfile" method="editQuery">
                     <cflocation url="admin.cfm"> 
                 </cfif>
             <cfelse>

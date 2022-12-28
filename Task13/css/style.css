@@ -5,22 +5,24 @@ body{
 	box-sizing: border-box;
 }
 .mainBody{
-    background-color: #808080;
+    background-color: #a8c497;
 	padding: 30px 40px;
 	text-align: center;
 }
 .field{
     padding: 10px;
     width: 50%;
+    outline: none;
+    border: none;
 }
 .button{
     padding: 10px;
     color: #ffffff;
-    background-color: #333333;
+    background-color: #66964a;
     cursor: pointer;
     border: none;
     border-radius: 5px;
 }
 .button:hover{
-    background-color: #000000;
+    background-color: #326116;
 }

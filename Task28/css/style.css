@@ -1,15 +1,29 @@
+body{
+	margin: 0;
+}
 *{
-    margin: 0px;
-    padding: 0px;
+	box-sizing: border-box;
 }
-.mainBody {
-    display: flex;
-    align-items:center ;
-    justify-content: space-between;
+.mainBody{
+    background-color: #72cfc5;
+	padding: 40px 50px;
+	text-align: center;
 }
-.text {
+.field{
     padding: 10px;
+    margin: 10px;
+    width: 50%;
+    outline: none;
+    border: none;
 }
-.submit :hover {
-    background-color: burlywood;
+.button{
+    padding: 10px;
+    color: #ffffff;
+    background-color: #2e8c83;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+.button:hover{
+    background-color: #136b62;
 }

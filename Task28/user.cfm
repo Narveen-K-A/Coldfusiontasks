@@ -10,16 +10,14 @@
                         <h1>WELCOME!</h1> <br>
                     </div>
                     <a href="login.cfm" class="logout">LOGOUT</a>
-                    <cfquery name="pageList" datasource="company">
-                        SELECT pagename,pagedescs FROM pagesDtl
-                    </cfquery>
+                    <cfinvoke component="componentfile" method="userQuery" returnVariable="result">
                 </div>
                 <div>
                     <h3>Page List</h3>
                 </div>
-                <cfloop query="pageList">
+                <cfloop query="result">
                     <div>
-                        <a href="showPage.cfm?name=#pageList.pagename#">#pageList.pagename#</a>
+                        <a href="showPage.cfm?name=#result.pagename#">#result.pagename#</a>
                     </div>							
                 </cfloop>
             <cfelse>

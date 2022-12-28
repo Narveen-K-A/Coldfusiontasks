@@ -10,9 +10,7 @@
                         <h1>Welcome #session.userRole# </h1> <br>
                     </div>
                     <a href="login.cfm" class="logout">LOGOUT</a>
-                    <cfquery name="pageList" datasource="company">
-                        select pagename,pagedescs,pageid from pagesDtl
-                    </cfquery>
+                    <cfinvoke component="componentfile" method="adminQuery" returnVariable="pageList">
                 </div>
                 <h2>Hi #session.name#<h2>
                 <div>

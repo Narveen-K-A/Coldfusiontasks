@@ -17,8 +17,8 @@
                 <cftry>
                     <cfset fileDelete(result["serverfile"])>
                     <cfcatch type="any">
-                        <cfreturn "only less than 1MB files are allowed">
                         <cflocation url="main.cfm">
+                        <cfreturn "Only less than 1MB files are allowed!">
                     </cfcatch>
                 </cftry>
             <cfelse>

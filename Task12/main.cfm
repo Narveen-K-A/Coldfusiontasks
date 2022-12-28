@@ -12,7 +12,7 @@
             </form>
             <cfif structKeyExists(form, "formsubmit")>
                 <cfinvoke method="sqlQuery" component="components/component" returnVariable="result">
-                The no #form.field# name is #result#<br>
+                Number #form.field# is #result#<br>
                 <cfinclude template="task.cfm">
                 <cfset StructClear(form)>
             </cfif>  

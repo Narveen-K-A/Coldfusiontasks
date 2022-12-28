@@ -13,9 +13,9 @@
                     </div>
                 </div>
                 <cfif structKeyExists(form,'formsubmit')>
-                    <cfinvoke method="getStruct" component="components/component" returnVariable="result">
+                    <cfinvoke method="getStruct" component="components/component">
                     <cfset structClear(form)>
-                    <cfdump var="#session.task#"><br>
+                    <cfdump var="#session.mystruct#"><br>
                     <cfif structKeyExists(session,'count')>
                         The key #session.value# is already present. Cannot add again!
                     </cfif>

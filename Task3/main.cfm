@@ -15,6 +15,7 @@
                 <cfif ArrayIsEmpty(result)>
                     There are no multiple of 3 in the given list!
                 <cfelse>
+                    The multiples of three in the given list are:
                     <cfloop array="#result#" index="i">
                         #i#
                     </cfloop>

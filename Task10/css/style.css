@@ -5,7 +5,7 @@ body{
 	box-sizing: border-box;
 }
 div{
-    background-color: #808080;
+    background-color: #72cfc5;
 	padding: 40px 50px;
 	text-align: center;
 }
@@ -13,15 +13,17 @@ div{
     padding: 10px;
     margin: 10px;
     width: 50%;
+    outline: none;
+    border: none;
 }
 .button{
     padding: 10px;
     color: #ffffff;
-    background-color: #333333;
+    background-color: #2e8c83;
     cursor: pointer;
     border: none;
     border-radius: 5px;
 }
 .button:hover{
-    background-color: #000000;
+    background-color: #136b62;
 }

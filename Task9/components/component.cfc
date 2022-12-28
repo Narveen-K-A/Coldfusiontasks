@@ -1,21 +1,18 @@
 <cfcomponent>
-    <cffunction name="getStruct"  access="remote" returntype="struct">
+    <cffunction name="getStruct"  access="remote">
         <cfargument name="formKey" type="string" default="#form.key#">
         <cfargument name="formValue" type="string" default="#form.value#">
-        <cfset local.myStruct=structNew()>
-        <cfif structKeyExists(session,'task')>
-            <cfif structKeyExists(session.task,"#arguments.formKey#")>
+        <cfif structKeyExists(session,'mystruct')>
+            <cfif structKeyExists(session.mystruct,"#arguments.formKey#")>
                 <cfset session.count=1>
                 <cfset session.value=arguments.formKey>
             <cfelse>
-                <cfset local.myStruct.count=0>
-                <cfset session.task[arguments.formKey]=arguments.formValue>
-                <cfset structAppend(session.task,session.task)>
+                <cfset session.mystruct[arguments.formKey]=arguments.formValue>
+                <cfset structAppend(session.mystruct,session.mystruct)>
             </cfif>
         <cfelse>
-            <cfset session.task=structNew()>
-            <cfset session.task[arguments.formKey]=arguments.formValue>
-        </cfif>    
-        <cfreturn local.myStruct>
+            <cfset session.mystruct=structNew()>
+            <cfset session.mystruct[arguments.formKey]=arguments.formValue>
+        </cfif>
     </cffunction>
 </cfcomponent>

@@ -21,4 +21,13 @@
 		</cfloop>   
        	<cfreturn myStructure>
     </cffunction>
+	<cffunction name="getTextCount" access="remote" returnType="query">
+        <cfquery name="textCount" datasource="company">
+            SELECT Word, numberOfTime
+            FROM wordCount
+            WHERE not len(Word)<3
+            ORDER BY numberOfTime DESC,len(Word) DESC, Word ASC;
+        </cfquery>
+        <cfreturn textCount>
+    </cffunction>
 </cfcomponent>

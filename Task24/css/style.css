@@ -13,17 +13,17 @@ body{
 .mainbody{
     padding: 20px;
     display: flex;
-    border: 1px solid #000000;
+    border: 1px solid #187348;
     border-radius: 5px;
     width: 50%;
-    background-color: #a9a9a9;
+    background-color: #8bccae;
 }
 .heading{
     margin: 20px;
 }
 .fname{
     padding: 10px;
-    border: 1px solid #000000;
+    border: 1px solid #187348;
     border-radius: 5px;
     margin: 10px;
 }
@@ -33,10 +33,10 @@ body{
 .submit{
     cursor: pointer;
     color: #ffffff;
-    background-color: #696969;
+    background-color: #2a704f;
 }
 .submit:hover{
-    background-color: #000000;
+    background-color: #063821;
 }
 .check{
     cursor: pointer;

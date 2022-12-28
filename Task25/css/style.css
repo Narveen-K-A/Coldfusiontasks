@@ -1,0 +1,27 @@
+body{
+	margin: 0;
+}
+*{
+	box-sizing: border-box;
+}
+div{
+    background-color: #8fa7cf;
+	padding: 40px 50px;
+    display: flex;
+    justify-content: center;
+}
+textarea{
+    border: none;
+    outline: none;
+}
+.button{
+    padding: 10px;
+    color: #ffffff;
+    background-color: #5175b0;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+.button:hover{
+    background-color: #193c73;
+}

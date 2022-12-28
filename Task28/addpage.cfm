@@ -1,6 +1,4 @@
 <html>
-    <head>
-    </head>
     <body>
         <cfoutput>
             <cfif structKeyExists( session,'name')>
@@ -22,12 +20,7 @@
                     </div> 	
                 </form>
                 <cfif structKeyExists(form,'addSubmit')>
-                    <cfquery name="edit" datasource="company">
-                        insert into pagesDtl values(
-                         <cfqueryparam value="#form.pageid#" cfsqltype="cf_sql_varchar">,
-                         <cfqueryparam value="#form.pagename#" cfsqltype="cf_sql_varchar">,
-                         <cfqueryparam value="#form.description#" cfsqltype="cf_sql_varchar">)
-                    </cfquery>
+                    <cfinvoke component="componentfile" method="addPageQuery">
                     <cflocation url="admin.cfm"> 
                 </cfif>
             <cfelse>

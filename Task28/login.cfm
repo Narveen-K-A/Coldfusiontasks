@@ -6,10 +6,10 @@
         <cfoutput>
             <div class="mainBody">
                 <form  method="post" name="form">
-                    User id:  <input type="text" name="userId"  class="text" required="yes" id="userId"><br>
+                    User ID:  <input type="text" name="userId" class="field" required="yes" id="userId"><br>
                     <br>
-                    Password:  <input type="password" name="password" class="text" id="password" required="yes"><br>
-                    <input type="submit" name="submit" class="text">
+                    Password:  <input type="password" name="password" class="field" id="password" required="yes"><br>
+                    <input type="submit" name="submit" class="button" value="Submit">
                 </form>
                 <cfif structKeyExists( form,'submit')>
                     <cfinvoke method="textField" component="components/component">

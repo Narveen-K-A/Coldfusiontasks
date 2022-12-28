@@ -1,12 +1,8 @@
 <html>
-    <head>
-    </head>
-    <body>        
-        <cfquery datasource="company" name="comp">
-            select * from employee; 
-        </cfquery>
-        TABLE IS<br>
-        <cfoutput query="comp">
+    <body>    
+        <cfinvoke component="components/component" method="displayTable" returnVariable="result">
+        TABLE IS:<br>
+        <cfoutput query="result">
             #FirstName# #LastName# <br>
         </cfoutput>    
     </body>

@@ -5,7 +5,7 @@ body{
 	box-sizing: border-box;
 }
 .mainBody{
-    background-color: #808080;
+    background-color: #8fc4bc;
 	padding: 30px 40px;
 	text-align: center;
 }
@@ -13,6 +13,8 @@ body{
     padding: 10px;
     width: 50%;
     margin: 10px;
+    outline: none;
+    border: none;
 }
 .label{
     text-align: center;
@@ -21,12 +23,12 @@ body{
 .button{
     padding: 10px;
     color: #ffffff;
-    background-color: #333333;
+    background-color: #4e9c8f;
     cursor: pointer;
     border: none;
     margin: 20px;
     border-radius: 5px;
 }
 .button:hover{
-    background-color: #000000;
+    background-color: #1d6b5e;
 }

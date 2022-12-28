@@ -1,5 +1,5 @@
 <cfcomponent>
-    <cffunction name="mulitiply">
+    <cffunction name="multiply">
         <cfargument name="w" required="yes">
         <cfargument name="x" required="yes">
         <cfargument name="y" required="yes" default="1">
