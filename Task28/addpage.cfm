@@ -2,6 +2,7 @@
     <body>
         <cfoutput>
             <cfif structKeyExists( session,'name')>
+                <div class="editBody">
                 <form name="form" method="post">
                     <div>
                         <label >Page Id:</label>
@@ -19,6 +20,7 @@
                         <input type="submit" name="addSubmit" id="editSubmit" value="Edit">
                     </div> 	
                 </form>
+                </div>
                 <cfif structKeyExists(form,'addSubmit')>
                     <cfinvoke component="componentfile" method="addPageQuery">
                     <cflocation url="admin.cfm"> 

@@ -1,16 +1,16 @@
 <cfcomponent>
     <cffunction name="textField"  access="remote">
         <cfargument name="password" default="#form.password#">
-        <cfargument name="userName" default="#form.userId#">
+        <cfargument name="username" default="#form.userId#">
         <cfif structKeyExists(form,'submit')>
             <cfquery name="userInfo" datasource="company">
                 SELECT role,username
                 FROM loginDtl
-                WHERE userid = <cfqueryparam value="#arguments.userName#" cfsqltype="cf_sql_varchar">
+                WHERE userid = <cfqueryparam value="#arguments.username#" cfsqltype="cf_sql_varchar">
                 AND passid = <cfqueryparam value="#arguments.password#" cfsqltype="cf_sql_varchar">
             </cfquery>
-            <cfset session.name=userInfo.username >
-            <cfset session.userRole = userInfo.role>
+            <cfset session.name=userInfo.username>
+            <cfset session.userRole=userInfo.role>
             <cfdump var="#userInfo.recordCount#">
             <cfif userInfo.recordCount>
                 <cfif session.userRole=="user">

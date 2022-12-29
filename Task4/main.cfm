@@ -11,7 +11,7 @@
                 The last friday is #myStruct.friday#<br>
                 The last day of the month is #myStruct.lastM#<br>
                 The last 5 days of the month is:<br>
-                <cfloop from="1" to="5" index="i" >
+                <cfloop from="5" to="1" index="i" step="-1" >
                     #myStruct[i]#<br>
                 </cfloop>
             </div>

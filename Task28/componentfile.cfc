@@ -16,7 +16,8 @@
     <cffunction name="editQuery" access="public">
         <cfquery name="edit" datasource="company">
             UPDATE pagesDtl
-            SET pagename=<cfqueryparam value="#form.pagename#" cfsqltype="cf_sql_varchar">, pagedescs=<cfqueryparam value="#form.description#" cfsqltype="cf_sql_varchar">
+            SET pagename=<cfqueryparam value="#form.pagename#" cfsqltype="cf_sql_varchar">, 
+            pagedescs=<cfqueryparam value="#form.description#" cfsqltype="cf_sql_varchar">
             WHERE pageid='#url.id#';
         </cfquery>
     </cffunction>

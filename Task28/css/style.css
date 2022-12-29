@@ -5,25 +5,64 @@ body{
 	box-sizing: border-box;
 }
 .mainBody{
-    background-color: #72cfc5;
+    background-color: #a495cf;
 	padding: 40px 50px;
 	text-align: center;
 }
 .field{
     padding: 10px;
     margin: 10px;
-    width: 50%;
+    width: 30%;
     outline: none;
     border: none;
 }
 .button{
     padding: 10px;
     color: #ffffff;
-    background-color: #2e8c83;
+    background-color: #7559c2;
     cursor: pointer;
     border: none;
     border-radius: 5px;
 }
 .button:hover{
-    background-color: #136b62;
+    background-color: #392278;
+}
+.adminBody{
+    padding: 20px;
+    text-align: center;
+}
+.welcomeMessage{
+    color: #392278;
+}
+.pageList{
+    margin: 20px;
+    color: #7559c2;
+}
+a{
+    margin: 20px;
+    text-decoration: none;
+}
+table{
+    margin: 20px;
+}
+.edit{
+    color: #008000;
+}
+.delete{
+    color: #ff0000;
+}
+.show{
+    padding: 5px;
+    border: none;
+    outline: none;
+}
+.margin{
+    margin: 10px 0px 10px 20px;
+}
+.displayFlex{
+    display: flex;
+}
+.border{
+    border: 1px solid black;
+    width: 50%
 }
