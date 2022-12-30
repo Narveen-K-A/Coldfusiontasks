@@ -11,15 +11,15 @@
 			<cfset key=key+1>
 			<cfset value="#item#">
  			<cfif not IsNumeric(#item#)>
-   				<cfif not isDefined("myStructure")>
-					<cfset myStructure = StructNew("ordered")>
-					<cfset myVariable = StructInsert(myStructure,"#key#","#value#")>
-				<cfelse>
-					<cfset myVariable = StructInsert(myStructure,"#key#","#value#")>
-				</cfif>
-   			</cfif>
-		</cfloop>   
-       	<cfreturn myStructure>
+   			<cfif StructKeyExists(local, "struct")>
+                    <cfset textvar=structInsert(local.struct, "#key#", "#value#")>
+                <cfelse>
+                    <cfset local.struct=structNew("Ordered")>
+                    <cfset textvar=structInsert(local.struct, "#key#", "#value#")>
+                </cfif>
+            </cfif>
+        </cfloop>
+        <cfreturn local.struct>
     </cffunction>
 	<cffunction name="getTextCount" access="remote" returnType="query">
         <cfquery name="textCount" datasource="company">

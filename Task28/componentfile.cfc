@@ -2,14 +2,14 @@
     <cffunction name="getQuery" access="public" returnType="query">
         <cfquery name="descList" datasource="company">
             SELECT pagedescs, pageid FROM pagesDtl
-            WHERE pageid='#arguments.pagelist#'
+            WHERE pageid=<cfqueryparam value="#arguments.pagelist#" cfsqltype="cf_sql_varchar">
         </cfquery>
         <cfreturn descList>
     </cffunction>
     <cffunction name="showQuery" access="public" returnType="query">
         <cfquery name="show" datasource="company">
             SELECT pagedescs FROM pagesDtl
-            WHERE pagename='#url.name#';
+            WHERE pagename=<cfqueryparam value="#url.name#" cfsqltype="cf_sql_varchar">
         </cfquery>
         <cfreturn show>
     </cffunction>
@@ -18,7 +18,7 @@
             UPDATE pagesDtl
             SET pagename=<cfqueryparam value="#form.pagename#" cfsqltype="cf_sql_varchar">, 
             pagedescs=<cfqueryparam value="#form.description#" cfsqltype="cf_sql_varchar">
-            WHERE pageid='#url.id#';
+            WHERE pageid=<cfqueryparam value="#url.id#" cfsqltype="cf_sql_varchar">
         </cfquery>
     </cffunction>
     <cffunction name="addPageQuery" access="public">
@@ -40,5 +40,8 @@
             SELECT pagename,pagedescs,pageid FROM pagesDtl;
         </cfquery>
         <cfreturn pageList>
+    </cffunction>
+    <cffunction name="sessionClear" access="remote">
+        <cfset structClear(session)>
     </cffunction>
 </cfcomponent>

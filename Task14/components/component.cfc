@@ -7,8 +7,8 @@
                 <cftry>
                     <cffile action="upload" fileField="file" nameConflict="overwrite" accept="image/jpg,image/jpeg,image/gif,image/png" result="result" destination="#expandpath("./assets")#">
                     <cfcatch type="any">
-                        <cfreturn "only jpg, jpeg, gif, png are allowed">
                         <cflocation url="main.cfm">
+                        <cfreturn "Only jpg, jpeg, gif, png are allowed">
                     </cfcatch>
                 </cftry>
                 <cfset session.size = result["filesize"]>
@@ -22,10 +22,10 @@
                         </cfcatch>
                     </cftry>
                 <cfelse>
-                        <cfimage action="resize" source="#expandpath("./assets/#session.location#")#" width="20" height="20" destination="#expandpath("./assets/duplicate/#session.location#")#" overwrite="true">
+                    <cfimage action="resize" source="#expandpath("./assets/#session.location#")#" width="20" height="20" destination="#expandpath("./assets/duplicate/#session.location#")#" overwrite="true">
                 </cfif>    
             </cfif>    
-            <cfset session.sizeKB = #session.size#/1000>
+            <cfset session.sizeKB=#session.size#/1000>
             <cfreturn"">
         </cfif>
     </cffunction>
