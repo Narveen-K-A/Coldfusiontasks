@@ -20,12 +20,19 @@
                         <tr>
                             <td>#pageList.pagename#</td>
                             <td><a class="edit" href="edit.cfm?name=#pageList.pagename#&id=#pageList.pageid#&desc=#result.pagedescs#">EDIT</a></td>
-                            <td><a class="delete" href="delete.cfc?method=deletepage&id=#pageList.pageid#">DELETE</a></td></td>
+                            <td><a class="delete" href="components/delete.cfc?method=deletepage&id=#pageList.pageid#">DELETE</a></td></td>
                         </tr>
                     </cfloop>
                 </table>
-                <a class="button" href="addpage.cfm"?>ADD PAGE</a>
-                <a class="button" href="login.cfm" class="logout">LOGOUT</a>
+                <a class="button" href="addpage.cfm"?>ADD PAGE</a><br><br>
+                <div class="logout">
+                    <form method="post">
+                        <input type="submit" name="logout" value="LOGOUT" class="button margin">
+                    </form>
+                    <cfif structKeyExists(form,'logout')>
+                        <cfinvoke method="logout" component="componentfile">
+                    </cfif>
+                </div>
             <cfelse>
                 <cflocation url="login.cfm" addtoken="No">
                 <cfset StructClear(Session)>

@@ -1,7 +1,7 @@
 <html>
     <body>
         <cfoutput>
-            <cfif structKeyExists( session,'name')>
+            <cfif structKeyExists( session,'adminFlag')>
                 <div class="editBody">
                 <form name="form" method="post">
                     <div>

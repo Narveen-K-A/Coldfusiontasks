@@ -1,8 +1,8 @@
 <html>
     <body>
         <cfoutput>
-            <cfif structKeyExists( session,'name')>
-                <form name="form" action="edit.cfm?name=#url.name#&id=#url.id#&desc=#url.desc#" method="post" class="formpage">
+            <cfif structKeyExists( session,'adminFlag')>
+                <form name="form" method="post" class="formpage">
                     <div>
                         <label>Page Name:</label>
                         <input type="text" name="pagename" id="pagenameid" class="edit" value="#url.name#">

@@ -11,7 +11,6 @@
             </cfquery>
             <cfset session.name=userInfo.username>
             <cfset session.userRole=userInfo.role>
-            <cfdump var="#userInfo.recordCount#">
             <cfif userInfo.recordCount>
                 <cfif session.userRole=="user">
                     <cfset Session.userFlag = 1>

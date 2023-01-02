@@ -41,7 +41,8 @@
         </cfquery>
         <cfreturn pageList>
     </cffunction>
-    <cffunction name="sessionClear" access="remote">
+    <cffunction name="logout" access="public">
         <cfset structClear(session)>
+        <cflocation url="login.cfm" addtoken="no">
     </cffunction>
 </cfcomponent>

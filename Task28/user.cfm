@@ -23,11 +23,18 @@
                         <div id="message" class="margin"></div>
                     </div>
                 </cfloop><br><br><br><br>
-                <a class="button" href="login.cfm" class="logout">LOGOUT</a>
+                <div class="logout">
+                    <form method="post">
+                        <input type="submit" name="logout" value="LOGOUT" class="button">
+                    </form>
+                    <cfif structKeyExists(form,'logout')>
+                        <cfinvoke method="logout" component="componentfile">
+                    </cfif>
+                </div>
                 <script src="assets/jquery.js"></script>
                 <script src="js/script.js"></script>  
             <cfelse>
-                <cflocation url="login.cfm" addtoken="No">
+                <cflocation url="login.cfm" addtoken="no">
                 <cfset StructClear(Session)>
             </cfif>
         </cfoutput>
